@@ -8,5 +8,6 @@ let getJoke = () => {
   .then(data => data.json())
   .then(item=>{jockContainer.textContent=`${item.joke}`;
   jockContainer.classList.add('fade')
-})};
+}).catch(err=>console.log(err));
+};
 btn.addEventListener('click', getJoke)

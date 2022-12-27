@@ -37,9 +37,9 @@ p {
   margin: 30px 0;
   opacity: 0;
 }
-.fade{
+.fade{    transition: opacity 1.5s ;
+
     opacity: 1;
-    transition: opacity 1.5s ;
 }
 
 button {
