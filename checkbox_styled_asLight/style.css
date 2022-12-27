@@ -47,8 +47,7 @@ label[for="light"] {
   top: 11em;
   left: 8em;
   z-index: -1;
-    transition: 0.3s;
-
+  transition: 0.3s;
 }
 
 label[for="light"]:after {
@@ -71,9 +70,9 @@ label[for="light"] {
 input[type="checkbox"]:checked::before {
   background-color: #f5f5f5;
   left: 10em;
-  box-shadow: 0 0 8.75em 1.87em rgba(196,241,255,0.8);
+  box-shadow: 0 0 8.75em 1.87em rgba(196, 241, 255, 0.8);
 }
 
-input[type="checkbox"]:checked+ label{
-    top: 12em;
+input[type="checkbox"]:checked + label {
+  top: 12em;
 }
