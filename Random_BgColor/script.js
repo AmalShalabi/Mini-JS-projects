@@ -8,3 +8,5 @@ changeColor=()=>{
     document.body.style.background=bgColor
 }
 
+//The Math.round() function returns the value of a number rounded to the nearest integer.
+
