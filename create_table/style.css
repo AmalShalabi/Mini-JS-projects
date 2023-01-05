@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(4, 96, 124);
+}
+
+.box{
+    display: flex;
+
+}
+h1,label{
+    color: white;
+    margin: 20px 0;
+}
+
+input, button{
+    padding:10px  ;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+button{
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+table,td{
+    border: rgb(192, 183, 183) 1px solid;
+    padding: 5px;
+    background-color: white;
+}
+
+table{
+    margin: 5px;
+}
