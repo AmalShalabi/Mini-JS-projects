@@ -56,7 +56,7 @@ function getRepos() {
           //Append the main div to container
           reposData.appendChild(mainDiv);
         });
-          title4.innerHTML += "Numbar Of Repositories: "+ repositories.length;
+          title4.innerHTML += "Number Of Repositories: "+ repositories.length;
       })
 
 
