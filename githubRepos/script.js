@@ -2,6 +2,7 @@
 let theInput = document.querySelector(".get-repos input");
 let getButton = document.querySelector(".get-button");
 let reposData = document.querySelector(".show-data");
+let title4=document.getElementById('title4')
 
 getButton.onclick = function () {
   getRepos();
@@ -17,13 +18,13 @@ function getRepos() {
       .then((repositories) => {
         //Empty The Container
         reposData.innerHTML = "";
+        title4.innerHTML=""
         //Loop on Repositories
         repositories.forEach((repo) => {
           //Create Main Div Element
           let mainDiv = document.createElement("div");
           // Create Repo Name Text
           let repoName = document.createTextNode(repo.name);
-       
 
           //Create Repo URL Anchore
           let theUrl = document.createElement("a");
@@ -34,7 +35,7 @@ function getRepos() {
           theUrl.appendChild(theUrlText);
           //Add The Hypertet Reference "href"
           theUrl.href = `https://github.com/${theInput.value}/${repo.name}`;
-        
+
           //set Attribute Blank
           theUrl.setAttribute("target", "__blank");
 
@@ -46,7 +47,6 @@ function getRepos() {
 
           // Add Class On Main Div
           mainDiv.className = "repo-box";
-
           //Append Icon to The MainDiv
           mainDiv.appendChild(icon);
           //Append The Text To Main Div
@@ -56,6 +56,9 @@ function getRepos() {
           //Append the main div to container
           reposData.appendChild(mainDiv);
         });
-      });
+          title4.innerHTML += "Numbar Of Repositories: "+ repositories.length;
+      })
+
+
   }
 }

@@ -6,6 +6,11 @@ body {
   font-family: Tahoma, Arial;
 }
 
+h2{
+  color: brown;
+  text-align: center;
+}
+
 .repos-container {
   width: 800px;
   background-color: #f6f6f6;
