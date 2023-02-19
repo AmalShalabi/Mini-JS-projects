@@ -28,6 +28,15 @@ function checkEmail(input) {
     showError(input, "Email Is Not A Valid email");
   }
 }
+//Check strong Password
+function checkStrongPassword(input) {
+  const re = /((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+  if (re.test(input.value)) {
+    showSuccess(input);
+  } else {
+    showError(input, "This is not a strong passwrod");
+  }
+}
 
 //Check required fields
 function checkRequired(inputArr) {
@@ -77,5 +86,6 @@ form.addEventListener("submit", (e) => {
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);
-  checkPasswordMatch(password,password2)
+  checkPasswordMatch(password, password2);
+  checkStrongPassword(password)
 });
