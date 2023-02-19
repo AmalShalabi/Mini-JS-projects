@@ -8,8 +8,8 @@ const password2 = document.getElementById("password2");
 const showError = (input, message) => {
   const formControl = input.parentElement;
   formControl.className = "form-control error";
-  const small=formControl.querySelector('small');
-  small.innerText=message
+  const small = formControl.querySelector("small");
+  small.innerText = message;
 };
 
 //Show success outline
@@ -19,38 +19,32 @@ const showSuccess = (input) => {
 };
 
 //Check email is valid
-function isValidEmail(email){
-
-     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase())
+function isValidEmail(email) {
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
+
+//Check required fields
+function checkRequired(inputArr){
+inputArr.forEach(function(input){
+  if(input.value.trim()===''){
+    showError(input,`${getFieldName(input)} Is Required`)
+  }else{
+    showSuccess(input)
+  }
+})
+}
+
+//Get Field Name
+function getFieldName(input){
+  return input.id.charAt(0).toUpperCase()+ input.id.slice(1);
+}
+
 
 //Event listeners
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (username.value === "") {
-    showError(username, "Username Is Required");
-  } else {
-    showSuccess(username);
-  }
-  if (email.value === "") {
-    showError(email, "Email Is Required");
-  }else if(!isValidEmail(email.value)) {
-    showError(email, "Email Is Not Valid");
-
-  } 
-  else {
-    showSuccess(email);
-  }
-    if (password.value === "") {
-      showError(password, "Password Is Required");
-    } else {
-      showSuccess(password);
-    }
-      if (password2.value === "") {
-        showError(password2, "Confirm The Password");
-      } else {
-        showSuccess(password2);
-      }
+  checkRequired([username,email,password,password2]);
 });
