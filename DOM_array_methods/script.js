@@ -37,17 +37,26 @@ function updateDOM(providedData = data) {
   providedData.forEach((item) => {
     const element = document.createElement("div");
     element.classList.add("person");
-    element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`;
-    main.appendChild(element)
+    element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(
+      item.money
+    )}`;
+    main.appendChild(element);
   });
 }
 
 //Format numer as money
-function formatMoney(number){
-  return '$'+ number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,"); // 12,345.67
+function formatMoney(number) {
+  return "$" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,"); // 12,345.67
+}
+
+//Double Money
+function doubleMoney() {
+  data = data.map((person) => {
+    return { ...person, money: person.money * 2 };
+  });
+  updateDOM();
 }
 
 //Event listner
-addUserBtn.addEventListener('click', ()=>{
-    getRandomUser()
-})
+addUserBtn.addEventListener("click", () => {getRandomUser()});
+doubleBtn.addEventListener("click", doubleMoney);
