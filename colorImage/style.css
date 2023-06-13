@@ -1,0 +1,30 @@
+body{
+    background-color: #ebebeb;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.container{
+    margin: 0 auto;
+    width: 35rem;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: rgba(0,0, 0, 0.08) 0px 4px 12px;
+}
+
+#image{
+    width: 100%;
+    object-fit: contain;
+}
+
+.container button{
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
